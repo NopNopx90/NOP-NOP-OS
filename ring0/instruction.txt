@@ -1,0 +1,20 @@
+--------------------------------------------------------------------------------------
+|        Privileged Level (Ring 0) Instructions
+--------------------------------------------------------------------------------------
+|   Instruction	               | Description
+|   LGDT	                   | Loads an address of a GDT into GDTR
+|   LLDT	                   | Loads an address of a LDT into LDTR
+|   LTR	                       | Loads a Task Register into TR
+|   MOV Control Register	   | Copy data and store in Control Registers
+|   LMSW	                   | Load a new Machine Status WORD
+|   CLTS	                   | Clear Task Switch Flag in Control Register CR0
+|   MOV Debug Register	       | Copy data and store in debug registers
+|   INVD	                   | Invalidate Cache without writeback
+|   INVLPG	                   | Invalidate TLB Entry
+|   WBINVD	                   | Invalidate Cache with writeback
+|   HLT	                       | Halt Processor
+|   RDMSR	                   | Read Model Specific Registers (MSR)
+|   WRMSR	                   | Write Model Specific Registers (MSR)
+|   RDPMC	                   | Read Performance Monitoring Counter
+|   RDTSC	                   | Read time Stamp Counter
+---------------------------------------------------------------------------------------
