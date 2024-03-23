@@ -22,6 +22,3 @@ To install NOP NOP OS, follow these steps:
 1. Ensure you have all the required dependencies installed.
 2. Download and extract the NOP NOP OS source code.
 3. Run the provided installation script, `assemble.bat`.
-    <!-- echo "install imdisk if u dont have it" -->
-    <!-- ./ImDiskTk20240210/install.bat -->
-    <!-- ./assemble.bat -->
