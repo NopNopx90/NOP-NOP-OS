@@ -15,7 +15,7 @@ imdisk -l -m X:
 imdisk -D -m X:
 echo Floppy disk image formatted to FAT12 and dismounted.
 gcc overwrite.c -o "%CD%\build\overwrite.exe"
-"%CD%\build\overwrite.exe"
+"%CD%\build\overwrite.exe" ".\build\floppy_M.img" ".\build\bootloader.bin"
 
 imdisk -a -o rw -t file -m X: -f "%CD%\build\floppy_M.img" -s 1474560 -S 512 -u 11
 copy /b "%CD%\build\kernal.bin" X:\

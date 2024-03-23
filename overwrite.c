@@ -3,19 +3,16 @@
 
 #define SECTOR_SIZE 512
 
-int main() {
+int main(int argc, char *argv[]) {
     FILE *image_file, *bootloader_file;
-    char img_path[] = "C:\\Users\\91935\\Documents\\Arman\\Real Mode\\NopOS\\local\\build\\floppy_M.img";
-    char bootloader_path[] = "C:\\Users\\91935\\Documents\\Arman\\Real Mode\\NopOS\\local\\build\\bootloader.bin";
 
-    // Open the disk image file
-    image_file = fopen(img_path, "r+b");
+    image_file = fopen(argv[1], "r+b");
     if (image_file == NULL) {
         perror("Error opening disk image file");
         return 1;
     }
 
-    bootloader_file = fopen(bootloader_path, "rb");
+    bootloader_file = fopen(argv[2], "rb");
     if (bootloader_file == NULL) {
         perror("Error opening bootloader binary file");
         fclose(image_file);
