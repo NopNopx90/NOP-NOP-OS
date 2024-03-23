@@ -2,8 +2,6 @@ org 0x0
 bits 16
 
 jmp main
-%include ".\src\bootloader\gdt.asm"
-%include ".\src\bootloader\print.asm"
 
 msg db "<16 bit> entering 32 bit PM... Processing...", 0xd,0xa,0
 
@@ -20,13 +18,19 @@ main:
 	call	print16
 
 ;;;;;;;;;;;;;;;;;;;;;;; Load GDT ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-	cli			; make sure to clear interrupts first!
+	cli								; clear interrupts first!
 	lgdt	[GDT_Descriptor]		; load GDT into GDTR
+
+;;;;;;;;;;;;;;;;;;;;;;; switch to 32 bit protected mode ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 	mov eax,cr0
 	or eax,1
 	mov cr0,eax
 	jmp code_seg:Enable_PM			; far jump
+
+%include ".\src\bootloader\gdt.asm"
+%include ".\src\bootloader\print.asm"
+
 
 bits 32
 Enable_PM:
@@ -48,4 +52,4 @@ halt:
     cli
     hlt
 
-PM_MODE db "[!] 32-bit Protected mode", 0xd,0xa,0
+PM_MODE db "[!] 32-bit Protected mode",0
