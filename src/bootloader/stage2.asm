@@ -52,4 +52,4 @@ halt:
     cli
     hlt
 
-PM_MODE db "[!] 32-bit Protected mode",0
+PM_MODE db "[!] 32-bit Protected mode loaded ",0
