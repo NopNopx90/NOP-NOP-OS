@@ -1,3 +1,5 @@
+# (it's just a implementation of 2 staged legacy boot bootloader)
+
 # NOP NOP OS
 
 ## References
